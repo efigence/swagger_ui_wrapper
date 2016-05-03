@@ -15,7 +15,7 @@ module SwaggerUiWrapper
       end
 
       def call(env)
-        if env['REQUEST_PATH'] == @path
+        if env['REQUEST_URI'].end_with? @path
           [301, {'Location' => env['REQUEST_URI'] + '?url=' + @api_url_base, 'Content-Type' => 'text/html', 'Content-Length' => '0'}, []]
         elsif env['REQUEST_URI'].start_with? @path
           @swagger_assets_handler.call(env)
