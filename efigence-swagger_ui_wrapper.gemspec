@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'swagger_ui_wrapper/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "swagger_ui_wrapper"
+  spec.name          = "efigence-swagger_ui_wrapper"
   spec.version       = SwaggerUiWrapper::VERSION
   spec.authors       = ["lizhe"]
   spec.email         = ["markgeek@qq.com"]
