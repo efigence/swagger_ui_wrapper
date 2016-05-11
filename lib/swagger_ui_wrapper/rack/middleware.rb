@@ -15,7 +15,7 @@ module SwaggerUiWrapper
       end
 
       def call(env)
-        if env['REQUEST_PATH'].start_with? @path
+        if env['REQUEST_PATH'] && env['REQUEST_PATH'].start_with?(@path)
           _env = env.merge("QUERY_STRING" => "url=http://localhost:9292/v1/swagger_doc")
           @swagger_assets_handler.call(_env)
         else
