@@ -15,8 +15,10 @@ module SwaggerUiWrapper
       end
 
       def call(env)
-        if env['REQUEST_PATH'] && env['REQUEST_PATH'].start_with?(@path)
-          if env['REQUEST_PATH'] == '/swagger/'
+        env_request_path = env['REQUEST_PATH'] || env['REQUEST_URI']
+
+        if env_request_path && env_request_path.start_with?(@path)
+          if env_request_path == '/swagger/'
             [302, {'Content-Type' => 'text',
                    'Location' => (@api_url_base || (env['rack.url_scheme'] + "://" + env["HTTP_HOST"].to_s)) + @path + 'v1.html',
                    'Content-Type' => 'text/html; charset=UTF-8'}, ['302 found']]
