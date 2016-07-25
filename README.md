@@ -1,6 +1,6 @@
 # SwaggerUiWrapper
 
-TODO: Write a gem description
+[![GitHub version](https://badge.fury.io/gh/efigence%2Fswagger_ui_wrapper.svg)](https://badge.fury.io/gh/efigence%2Fswagger_ui_wrapper)
 
 ## Installation
 
