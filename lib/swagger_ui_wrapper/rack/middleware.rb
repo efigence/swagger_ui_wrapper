@@ -20,8 +20,7 @@ module SwaggerUiWrapper
 
         if env_request_path && env_request_path.start_with?(@path)
           if env_request_path == '/swagger/'
-            [302, {'Content-Type' => 'text',
-                   'Location' => (@api_url_base || (env['rack.url_scheme'] + "://" + env["HTTP_HOST"].to_s)) + @path + 'v1',
+            [302, {'Location' => (@api_url_base || (env['rack.url_scheme'] + "://" + env["HTTP_HOST"].to_s)) + @path + 'v1',
                    'Content-Type' => 'text/html; charset=UTF-8'}, ['302 found']]
           else
             # some hack for GRAPE:
